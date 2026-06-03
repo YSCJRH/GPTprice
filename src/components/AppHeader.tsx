@@ -90,7 +90,7 @@ export function AppHeader({
             target="_blank"
             rel="noreferrer"
             className="inline-flex h-10 items-center justify-center rounded-md bg-slate-950 px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-300"
-            aria-label="Star GPTprice on GitHub"
+            aria-label={language === 'zh' ? '点星鼓励 GPTprice' : 'Star GPTprice on GitHub'}
           >
             {t.star}
           </a>

@@ -11,7 +11,7 @@ export const copy = {
     navContribute: '贡献数据',
     navFaq: 'FAQ',
     navAbout: '关于',
-    star: 'Star on GitHub',
+    star: '点星鼓励',
     language: '语言',
     currency: '基准货币',
     heroKicker: '开源价格雷达',
