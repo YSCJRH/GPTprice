@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { copy, languages } from '../lib/i18n'
+import { currencyLabel } from '../lib/format'
 import type { Language } from '../types/price'
 
 interface AppHeaderProps {
@@ -80,7 +81,7 @@ export function AppHeader({
           >
             {currencies.map((item) => (
               <option key={item} value={item}>
-                {item}
+                {currencyLabel(item, language)}
               </option>
             ))}
           </select>
