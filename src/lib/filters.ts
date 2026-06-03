@@ -1,4 +1,5 @@
 import type { PlatformFilter, PlanFilter, PriceRecord, SourceFilter } from '../types/price'
+import { zhRegionName } from './regions'
 
 export function isDefaultVisibleRecord(record: PriceRecord): boolean {
   return record.status === 'active' && record.confidence !== 'needs_review' && record.confidence !== 'conflict'
@@ -11,6 +12,7 @@ export function matchesSearch(record: PriceRecord, query: string): boolean {
   return [
     record.regionCode,
     record.countryOrRegionName,
+    zhRegionName(record.regionCode, record.countryOrRegionName),
     record.currency,
     record.plan,
     record.platform,

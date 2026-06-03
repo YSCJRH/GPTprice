@@ -12,6 +12,7 @@ import {
   matchesSource,
 } from '../lib/filters'
 import { sortPriceRecords } from '../lib/sort'
+import { localizedRegionName } from '../lib/regions'
 import type {
   ExchangeRateDataset,
   Language,
@@ -80,7 +81,7 @@ export function HomePage({ currency, language }: HomePageProps) {
           </p>
           {lowestRecord ? (
             <p className="mt-3 text-sm text-slate-500">
-              {lowestRecord.countryOrRegionName} · {planLabel(lowestRecord.plan, language)} ·{' '}
+              {localizedRegionName(lowestRecord, language)} · {planLabel(lowestRecord.plan, language)} ·{' '}
               {platformLabel(lowestRecord.platform, language)}
             </p>
           ) : (

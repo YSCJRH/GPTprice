@@ -9,6 +9,7 @@ import {
   taxIncludedLabel,
 } from '../lib/format'
 import { copy } from '../lib/i18n'
+import { localizedRegionName } from '../lib/regions'
 import type { Language, PriceRecord } from '../types/price'
 import { ConfidenceBadge } from './ConfidenceBadge'
 import { SourceBadge } from './SourceBadge'
@@ -32,7 +33,7 @@ export function PriceCard({ currency, language, rates, record }: PriceCardProps)
             to={`/region/${record.regionCode}`}
             className="font-semibold text-slate-950 hover:text-slate-700"
           >
-            {record.countryOrRegionName}
+            {localizedRegionName(record, language)}
           </Link>
           <p className="mt-1 text-sm text-slate-500">
             {planLabel(record.plan, language)} · {platformLabel(record.platform, language)} ·{' '}

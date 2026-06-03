@@ -5,6 +5,7 @@ import { DisclaimerBanner } from '../components/DisclaimerBanner'
 import { PriceTable } from '../components/PriceTable'
 import { copy } from '../lib/i18n'
 import { isDefaultVisibleRecord } from '../lib/filters'
+import { localizedRegionName } from '../lib/regions'
 import type { ExchangeRateDataset, Language, PriceDataset } from '../types/price'
 
 const priceData = priceDataJson as PriceDataset
@@ -30,7 +31,7 @@ export function RegionPage({ currency, language }: RegionPageProps) {
           {language === 'zh' ? '返回价格列表' : 'Back to prices'}
         </Link>
         <h1 className="text-4xl font-bold text-slate-950">
-          {records[0]?.countryOrRegionName ?? normalizedCode}
+          {records[0] ? localizedRegionName(records[0], language) : normalizedCode}
         </h1>
       </div>
 

@@ -9,6 +9,7 @@ import {
   taxIncludedLabel,
 } from '../lib/format'
 import { copy } from '../lib/i18n'
+import { localizedRegionName } from '../lib/regions'
 import type { Language, PriceRecord } from '../types/price'
 import { ConfidenceBadge } from './ConfidenceBadge'
 import { PriceCard } from './PriceCard'
@@ -63,7 +64,7 @@ export function PriceTable({ currency, language, rates, records }: PriceTablePro
                         className="font-semibold text-slate-950 hover:text-slate-700"
                         to={`/region/${record.regionCode}`}
                       >
-                        {record.countryOrRegionName}
+                        {localizedRegionName(record, language)}
                       </Link>
                       <div className="mt-1 text-xs text-slate-500">{record.regionCode}</div>
                     </td>
