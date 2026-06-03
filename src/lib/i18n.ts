@@ -16,7 +16,6 @@ export const copy = {
     currency: '基准货币',
     heroKicker: '开源价格雷达',
     heroTitle: '比较不同地区的 ChatGPT / OpenAI 订阅价格',
-    heroSubtitle: '简体中文优先的价格透明化面板，保留来源、税费、置信度和更新时间。',
     visibleRecords: '当前可见记录',
     controlsTitle: '筛选价格记录',
     controlsSubtitle: '按计划、地区、平台、来源和基准货币缩小范围。',
@@ -67,8 +66,6 @@ export const copy = {
     currency: 'Base currency',
     heroKicker: 'Open-source price radar',
     heroTitle: 'Compare ChatGPT / OpenAI subscription prices across regions',
-    heroSubtitle:
-      'A price transparency dashboard with sources, tax status, confidence, and update dates.',
     visibleRecords: 'Visible records',
     controlsTitle: 'Filter price records',
     controlsSubtitle: 'Narrow by plan, region, platform, source, and base currency.',

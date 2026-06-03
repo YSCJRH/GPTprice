@@ -74,12 +74,9 @@ export function HomePage({ currency, language }: HomePageProps) {
         <div className="flex min-w-0 flex-col justify-center gap-4">
           <div className="grid gap-3">
             <p className="text-sm font-semibold text-slate-500">{t.heroKicker}</p>
-            <h1 className="max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+            <h1 className="max-w-4xl text-2xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-3xl lg:text-4xl">
               {t.heroTitle}
             </h1>
-            <p className="max-w-3xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-              {t.heroSubtitle}
-            </p>
           </div>
         </div>
 
@@ -110,10 +107,6 @@ export function HomePage({ currency, language }: HomePageProps) {
           </div>
         </aside>
       </section>
-
-      <p className="rounded-md border border-amber-200 bg-amber-50/80 px-4 py-3 text-sm leading-6 text-amber-950">
-        {t.compactCompliance}
-      </p>
 
       <section className="grid gap-4">
         <PlanTabs
@@ -147,6 +140,10 @@ export function HomePage({ currency, language }: HomePageProps) {
       <p className="text-sm text-slate-500">
         {t.dataUpdated}: {formatDate(priceData.updatedAt)} · {t.ratesUpdated}:{' '}
         {formatDate(exchangeRates.updatedAt)} · {t.indicative}
+      </p>
+
+      <p className="rounded-md border border-amber-200 bg-amber-50/80 px-4 py-3 text-sm leading-6 text-amber-950">
+        {t.compactCompliance}
       </p>
     </main>
   )
