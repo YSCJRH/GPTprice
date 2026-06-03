@@ -3,6 +3,10 @@ description: Suggest a product or data-maintenance improvement.
 title: "[Feature]: "
 labels: ["feature"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include private repository names, internal links, account data, payment data, tokens, or payment-workaround guidance.
   - type: textarea
     id: problem
     attributes:

@@ -21,7 +21,7 @@ export function Footer({ language }: FooterProps) {
             className="font-medium text-slate-700 hover:text-slate-950"
             href="https://github.com/YSCJRH/GPTprice"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             {t.star}
           </a>

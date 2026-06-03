@@ -12,6 +12,8 @@ Thanks for helping keep GPTprice accurate and transparent.
 ## Do Not Submit
 
 - Email addresses, order IDs, payment card numbers, billing addresses, account screenshots, or private invoices.
+- Cookies, API keys, access tokens, private repository links, internal issue links, or local filesystem paths.
+- Screenshots that contain account identifiers, email addresses, order IDs, billing details, payment details, or private workspace names.
 - Unsourced prices or expired screenshots.
 - VPN, gift-card, fake-address, account-region-change, or payment-workaround instructions.
 - Any guide for bypassing OpenAI, Apple, Google, payment-provider, platform, or local rules.

@@ -3,6 +3,10 @@ description: Correct an existing record.
 title: "[Correction]: "
 labels: ["data", "correction"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include email addresses, order IDs, payment card numbers, billing addresses, account screenshots, cookies, tokens, private repository links, local paths, or payment-workaround guidance.
   - type: input
     id: record
     attributes:
@@ -21,6 +25,6 @@ body:
     id: source
     attributes:
       label: Source
-      description: Provide a reliable source or redacted evidence.
+      description: Provide a reliable public source or redacted evidence. Remove private data and do not link private repositories.
     validations:
       required: true

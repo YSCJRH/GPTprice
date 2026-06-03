@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Do not include email addresses, order IDs, payment card numbers, billing addresses, account screenshots, or payment-workaround guidance.
+        Do not include email addresses, order IDs, payment card numbers, billing addresses, account screenshots, cookies, tokens, private repository links, local paths, or payment-workaround guidance.
   - type: input
     id: region
     attributes:
@@ -40,7 +40,7 @@ body:
     id: source
     attributes:
       label: Source
-      description: Official URL or redacted evidence. Remove private data.
+      description: Official public URL or redacted evidence. Remove private data and do not link private repositories.
     validations:
       required: true
   - type: textarea
