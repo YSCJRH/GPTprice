@@ -26,16 +26,16 @@ export function PriceCard({ currency, language, rates, record }: PriceCardProps)
   const converted = convertedPriceForRecord(record, currency, rates)
 
   return (
-    <article className="rounded-md border border-slate-200 bg-white p-4 shadow-sm">
+    <article className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
       <div className="flex items-start justify-between gap-3">
         <div>
           <Link
             to={`/region/${record.regionCode}`}
-            className="font-semibold text-slate-950 hover:text-slate-700"
+            className="text-lg font-semibold text-slate-950 hover:text-slate-700"
           >
             {localizedRegionName(record, language)}
           </Link>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm leading-6 text-slate-500">
             {planLabel(record.plan, language)} · {platformLabel(record.platform, language)} ·{' '}
             {billingCycleLabel(record.billingCycle, language)}
           </p>
@@ -43,12 +43,15 @@ export function PriceCard({ currency, language, rates, record }: PriceCardProps)
         <ConfidenceBadge confidence={record.confidence} language={language} />
       </div>
 
-      <div className="mt-4 text-2xl font-bold text-slate-950">
-        {record.localPriceDisplay ?? formatMoney(record.localPrice, record.currency)}
+      <div className="mt-4 rounded-md bg-slate-50 px-3 py-3">
+        <p className="text-xs font-semibold uppercase text-slate-500">{t.localPrice}</p>
+        <p className="mt-1 text-2xl font-semibold text-slate-950">
+          {record.localPriceDisplay ?? formatMoney(record.localPrice, record.currency)}
+        </p>
       </div>
-      <dl className="mt-4 grid grid-cols-[7rem_1fr] gap-x-3 gap-y-2 text-sm">
+      <dl className="mt-4 grid grid-cols-[6rem_1fr] gap-x-3 gap-y-3 text-sm">
         <dt className="text-slate-500">{t.converted}</dt>
-        <dd className="text-slate-900">
+        <dd className="font-semibold text-slate-900">
           {converted == null ? t.noFixedPrice : `${formatMoney(converted, currency)} · ${t.indicative}`}
         </dd>
         <dt className="text-slate-500">{t.tax}</dt>

@@ -69,50 +69,73 @@ export function HomePage({ currency, language }: HomePageProps) {
       : convertedPriceForRecord(lowestRecord, currency, exchangeRates.rates)
 
   return (
-    <main className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-8 sm:px-6 lg:px-8">
-      <section className="grid items-end gap-5 lg:grid-cols-[minmax(0,1fr)_22rem]">
-        <h1 className="max-w-4xl text-4xl font-bold leading-tight text-slate-950 sm:text-5xl">
-          {t.heroTitle}
-        </h1>
-        <aside className="rounded-md border border-slate-200 bg-white p-5 shadow-sm">
-          <p className="text-sm font-medium text-slate-500">{t.lowestConverted}</p>
-          <p className="mt-2 text-4xl font-bold text-slate-950">
-            {lowestValue == null ? '-' : formatMoney(lowestValue, currency)}
-          </p>
-          {lowestRecord ? (
-            <p className="mt-3 text-sm text-slate-500">
-              {localizedRegionName(lowestRecord, language)} · {planLabel(lowestRecord.plan, language)} ·{' '}
-              {platformLabel(lowestRecord.platform, language)}
+    <main className="mx-auto grid w-full max-w-7xl gap-5 px-4 py-6 sm:px-6 lg:px-8">
+      <section className="grid gap-5 rounded-lg border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.06)] sm:p-6 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-stretch">
+        <div className="flex min-w-0 flex-col justify-center gap-4">
+          <div className="grid gap-3">
+            <p className="text-sm font-semibold text-slate-500">{t.heroKicker}</p>
+            <h1 className="max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+              {t.heroTitle}
+            </h1>
+            <p className="max-w-3xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+              {t.heroSubtitle}
             </p>
-          ) : (
-            <p className="mt-3 text-sm text-slate-500">{t.noFixedPrice}</p>
-          )}
+          </div>
+        </div>
+
+        <aside className="flex flex-col justify-between rounded-lg border border-slate-200 bg-slate-950 p-5 text-white shadow-sm">
+          <div>
+            <p className="text-sm font-medium text-slate-300">{t.lowestConverted}</p>
+            <p className="mt-3 text-4xl font-semibold tracking-tight">
+              {lowestValue == null ? '-' : formatMoney(lowestValue, currency)}
+            </p>
+            {lowestRecord ? (
+              <p className="mt-3 text-sm leading-6 text-slate-300">
+                {localizedRegionName(lowestRecord, language)} · {planLabel(lowestRecord.plan, language)} ·{' '}
+                {platformLabel(lowestRecord.platform, language)}
+              </p>
+            ) : (
+              <p className="mt-3 text-sm text-slate-300">{t.noFixedPrice}</p>
+            )}
+          </div>
+          <div className="mt-8 grid grid-cols-2 gap-3 border-t border-white/10 pt-4 text-sm">
+            <div>
+              <p className="text-slate-400">{t.visibleRecords}</p>
+              <p className="mt-1 text-lg font-semibold text-white">{visibleRecords.length}</p>
+            </div>
+            <div>
+              <p className="text-slate-400">{t.dataUpdated}</p>
+              <p className="mt-1 text-lg font-semibold text-white">{formatDate(priceData.updatedAt)}</p>
+            </div>
+          </div>
         </aside>
       </section>
 
-      <PlanTabs
-        language={language}
-        selectedPlan={selectedPlan}
-        onPlanChange={setSelectedPlan}
-      />
-
-      <p className="rounded-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-500 shadow-sm">
+      <p className="rounded-md border border-amber-200 bg-amber-50/80 px-4 py-3 text-sm leading-6 text-amber-950">
         {t.compactCompliance}
       </p>
 
-      <Filters
-        language={language}
-        platform={platform}
-        search={search}
-        showUnverified={showUnverified}
-        source={source}
-        sortKey={sortKey}
-        onPlatformChange={setPlatform}
-        onSearchChange={setSearch}
-        onShowUnverifiedChange={setShowUnverified}
-        onSourceChange={setSource}
-        onSortKeyChange={setSortKey}
-      />
+      <section className="grid gap-4">
+        <PlanTabs
+          language={language}
+          selectedPlan={selectedPlan}
+          onPlanChange={setSelectedPlan}
+        />
+
+        <Filters
+          language={language}
+          platform={platform}
+          search={search}
+          showUnverified={showUnverified}
+          source={source}
+          sortKey={sortKey}
+          onPlatformChange={setPlatform}
+          onSearchChange={setSearch}
+          onShowUnverifiedChange={setShowUnverified}
+          onSourceChange={setSource}
+          onSortKeyChange={setSortKey}
+        />
+      </section>
 
       <PriceTable
         currency={currency}

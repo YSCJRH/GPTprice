@@ -34,7 +34,7 @@ function App() {
 
   return (
     <HashRouter>
-      <div className="flex min-h-screen flex-col bg-slate-50">
+      <div className="flex min-h-screen flex-col bg-[#f7f8fb] text-slate-950">
         <AppHeader
           currencies={currencies}
           currency={currency}

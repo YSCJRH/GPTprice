@@ -26,23 +26,23 @@ export function RegionPage({ currency, language }: RegionPageProps) {
 
   return (
     <main className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-8 sm:px-6 lg:px-8">
-      <div className="grid gap-2">
+      <div className="grid gap-3 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
         <Link className="text-sm font-semibold text-slate-500 hover:text-slate-950" to="/">
           {language === 'zh' ? '返回价格列表' : 'Back to prices'}
         </Link>
-        <h1 className="text-4xl font-bold text-slate-950">
+        <h1 className="text-4xl font-semibold tracking-tight text-slate-950">
           {records[0] ? localizedRegionName(records[0], language) : normalizedCode}
         </h1>
       </div>
 
       {records.length === 0 && (
-        <div className="rounded-md border border-slate-200 bg-white p-8 text-slate-600">
+        <div className="rounded-lg border border-slate-200 bg-white p-8 text-slate-600 shadow-sm">
           {language === 'zh' ? '该地区尚无价格记录。' : 'No price records exist for this region yet.'}
         </div>
       )}
 
       {records.length > 0 && visibleRecords.length === 0 && (
-        <div className="rounded-md border border-slate-200 bg-white p-6 text-slate-600">
+        <div className="rounded-lg border border-slate-200 bg-white p-6 text-slate-600 shadow-sm">
           {language === 'zh'
             ? '该地区暂无已验证价格数据。你可以提交可靠来源来帮助更新。'
             : 'No verified price data yet. You can help by submitting a verified source.'}
@@ -59,7 +59,7 @@ export function RegionPage({ currency, language }: RegionPageProps) {
       )}
 
       {visibleNotes.length > 0 && (
-        <section className="grid gap-4 rounded-md border border-slate-200 bg-white p-5">
+        <section className="grid gap-4 rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
           <h2 className="text-xl font-semibold text-slate-950">{t.notes}</h2>
           <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-slate-600">
             {visibleNotes.map((note) => <li key={note}>{note}</li>)}

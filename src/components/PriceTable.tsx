@@ -27,29 +27,29 @@ export function PriceTable({ currency, language, rates, records }: PriceTablePro
 
   if (records.length === 0) {
     return (
-      <div className="rounded-md border border-slate-200 bg-white p-8 text-center text-slate-500">
-        {t.noResults}
+      <div className="rounded-lg border border-dashed border-slate-300 bg-white p-10 text-center shadow-sm">
+        <p className="text-base font-semibold text-slate-950">{t.noResults}</p>
       </div>
     )
   }
 
   return (
     <>
-      <div className="hidden overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm lg:block">
+      <div className="hidden overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm lg:block">
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-slate-200 text-sm">
-            <thead className="bg-slate-50">
+            <thead className="bg-slate-50/80">
               <tr className="text-left text-xs font-semibold uppercase text-slate-500">
-                <th className="px-4 py-3">#</th>
-                <th className="px-4 py-3">{t.region}</th>
-                <th className="px-4 py-3">{t.plan}</th>
-                <th className="px-4 py-3">{t.platform}</th>
-                <th className="px-4 py-3">{t.localPrice}</th>
-                <th className="px-4 py-3">{currency}</th>
-                <th className="px-4 py-3">{t.tax}</th>
-                <th className="px-4 py-3">{t.source}</th>
-                <th className="px-4 py-3">{t.confidence}</th>
-                <th className="px-4 py-3">{t.verified}</th>
+                <th className="px-4 py-3.5">#</th>
+                <th className="px-4 py-3.5">{t.region}</th>
+                <th className="px-4 py-3.5">{t.plan}</th>
+                <th className="px-4 py-3.5">{t.platform}</th>
+                <th className="px-4 py-3.5">{t.localPrice}</th>
+                <th className="px-4 py-3.5">{currency}</th>
+                <th className="px-4 py-3.5">{t.tax}</th>
+                <th className="px-4 py-3.5">{t.source}</th>
+                <th className="px-4 py-3.5">{t.confidence}</th>
+                <th className="px-4 py-3.5">{t.verified}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -57,7 +57,7 @@ export function PriceTable({ currency, language, rates, records }: PriceTablePro
                 const converted = convertedPriceForRecord(record, currency, rates)
 
                 return (
-                  <tr key={record.id} className="align-top text-slate-700">
+                  <tr key={record.id} className="align-top text-slate-700 transition hover:bg-slate-50/80">
                     <td className="px-4 py-4 text-slate-400">{index + 1}</td>
                     <td className="px-4 py-4">
                       <Link
@@ -68,8 +68,8 @@ export function PriceTable({ currency, language, rates, records }: PriceTablePro
                       </Link>
                       <div className="mt-1 text-xs text-slate-500">{record.regionCode}</div>
                     </td>
-                    <td className="px-4 py-4">{planLabel(record.plan, language)}</td>
-                    <td className="px-4 py-4">{platformLabel(record.platform, language)}</td>
+                    <td className="px-4 py-4 font-medium text-slate-800">{planLabel(record.plan, language)}</td>
+                    <td className="px-4 py-4 text-slate-600">{platformLabel(record.platform, language)}</td>
                     <td className="px-4 py-4">
                       <div className="font-semibold text-slate-950">
                         {record.localPriceDisplay ?? formatMoney(record.localPrice, record.currency)}
@@ -86,7 +86,7 @@ export function PriceTable({ currency, language, rates, records }: PriceTablePro
                     </td>
                     <td className="px-4 py-4">
                       {taxIncludedLabel(record.taxIncluded, language)}
-                      {record.taxNote && <div className="mt-1 max-w-44 text-xs text-slate-500">{record.taxNote}</div>}
+                      {record.taxNote && <div className="mt-1 max-w-44 text-xs leading-5 text-slate-500">{record.taxNote}</div>}
                     </td>
                     <td className="px-4 py-4">
                       <SourceBadge

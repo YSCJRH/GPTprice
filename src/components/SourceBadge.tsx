@@ -10,7 +10,7 @@ interface SourceBadgeProps {
 export function SourceBadge({ language, sourceType, sourceUrl }: SourceBadgeProps) {
   const label = sourceTypeLabel(sourceType, language)
   const className =
-    'inline-flex items-center rounded-full bg-white px-2 py-1 text-xs font-semibold text-slate-700 ring-1 ring-inset ring-slate-200 hover:text-slate-950'
+    'inline-flex items-center rounded-full bg-slate-50 px-2.5 py-1 text-xs font-semibold text-slate-700 ring-1 ring-inset ring-slate-200 transition hover:bg-white hover:text-slate-950'
 
   if (!sourceUrl) {
     return <span className={className}>{label}</span>

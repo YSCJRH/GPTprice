@@ -27,10 +27,10 @@ export function AppHeader({
   const t = copy[language]
 
   return (
-    <header className="border-b border-slate-200 bg-white">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+    <header className="sticky top-0 z-20 border-b border-slate-200/70 bg-white/90 backdrop-blur">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-3 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div className="flex min-w-0 flex-wrap items-center gap-x-8 gap-y-3">
-          <NavLink to="/" className="text-xl font-bold text-slate-950">
+          <NavLink to="/" className="text-xl font-semibold tracking-tight text-slate-950">
             GPTprice
           </NavLink>
           <nav className="flex flex-wrap items-center gap-1" aria-label="Primary navigation">
@@ -39,9 +39,9 @@ export function AppHeader({
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  `rounded-md px-3 py-2 text-sm font-medium ${
+                  `rounded-md px-3 py-2 text-sm font-medium transition ${
                     isActive
-                      ? 'bg-slate-950 text-white'
+                      ? 'bg-slate-950 text-white shadow-sm'
                       : 'text-slate-600 hover:bg-slate-100 hover:text-slate-950'
                   }`
                 }
@@ -58,7 +58,7 @@ export function AppHeader({
           </label>
           <select
             id="language-select"
-            className="h-10 rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-900 shadow-sm"
+            className="h-10 rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-400 focus:ring-4 focus:ring-slate-200/60"
             value={language}
             onChange={(event) => onLanguageChange(event.target.value as Language)}
           >
@@ -74,7 +74,7 @@ export function AppHeader({
           </label>
           <select
             id="currency-select"
-            className="h-10 rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-900 shadow-sm"
+            className="h-10 rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-400 focus:ring-4 focus:ring-slate-200/60"
             value={currency}
             onChange={(event) => onCurrencyChange(event.target.value)}
           >
@@ -89,7 +89,7 @@ export function AppHeader({
             href="https://github.com/YSCJRH/GPTprice"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-10 items-center justify-center rounded-md bg-slate-950 px-4 text-sm font-semibold text-white hover:bg-slate-800"
+            className="inline-flex h-10 items-center justify-center rounded-md bg-slate-950 px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-300"
             aria-label="Star GPTprice on GitHub"
           >
             {t.star}

@@ -99,9 +99,11 @@ export function FaqPage({ language }: FaqPageProps) {
 
   return (
     <main className="mx-auto grid w-full max-w-4xl gap-5 px-4 py-8 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold text-slate-950">FAQ</h1>
+      <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+        <h1 className="text-4xl font-semibold tracking-tight text-slate-950">FAQ</h1>
+      </div>
       {items.map((item) => (
-        <section key={item.question} className="rounded-md border border-slate-200 bg-white p-5 shadow-sm">
+        <section key={item.question} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
           <h2 className="text-lg font-semibold text-slate-950">{item.question}</h2>
           <p className="mt-3 leading-7 text-slate-600">{item.answer}</p>
         </section>

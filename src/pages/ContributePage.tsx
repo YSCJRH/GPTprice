@@ -8,8 +8,10 @@ interface ContributePageProps {
 export function ContributePage({ language }: ContributePageProps) {
   if (language === 'en') {
     return (
-      <main className="mx-auto grid w-full max-w-4xl gap-6 px-4 py-8 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-slate-950">Contribute price data</h1>
+      <main className="mx-auto grid w-full max-w-4xl gap-5 px-4 py-8 sm:px-6 lg:px-8">
+        <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+          <h1 className="text-4xl font-semibold tracking-tight text-slate-950">Contribute price data</h1>
+        </div>
         <Section
           title="Accepted sources"
           items={[
@@ -40,8 +42,10 @@ export function ContributePage({ language }: ContributePageProps) {
   }
 
   return (
-    <main className="mx-auto grid w-full max-w-4xl gap-6 px-4 py-8 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold text-slate-950">贡献价格数据</h1>
+    <main className="mx-auto grid w-full max-w-4xl gap-5 px-4 py-8 sm:px-6 lg:px-8">
+      <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+        <h1 className="text-4xl font-semibold tracking-tight text-slate-950">贡献价格数据</h1>
+      </div>
       <Section
         title="可接受来源"
         items={[
@@ -78,7 +82,7 @@ interface SectionProps {
 
 function Section({ items, title }: SectionProps) {
   return (
-    <section className="rounded-md border border-slate-200 bg-white p-5 shadow-sm">
+    <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
       <h2 className="text-xl font-semibold text-slate-950">{title}</h2>
       <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-600">
         {items.map((item) => (
