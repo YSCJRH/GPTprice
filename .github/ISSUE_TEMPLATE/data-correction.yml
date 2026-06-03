@@ -1,0 +1,26 @@
+name: Data correction
+description: Correct an existing record.
+title: "[Correction]: "
+labels: ["data", "correction"]
+body:
+  - type: input
+    id: record
+    attributes:
+      label: Record ID
+      placeholder: us-plus-web-monthly-2026-06-03
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Correction
+      description: Explain what should change and why.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: Provide a reliable source or redacted evidence.
+    validations:
+      required: true

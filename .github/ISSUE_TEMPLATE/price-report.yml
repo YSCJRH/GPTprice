@@ -1,0 +1,50 @@
+name: Price report
+description: Submit a verified price record.
+title: "[Price]: "
+labels: ["data", "price-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include email addresses, order IDs, payment card numbers, billing addresses, account screenshots, or payment-workaround guidance.
+  - type: input
+    id: region
+    attributes:
+      label: Region
+      description: Country or region name and code.
+      placeholder: United States (US)
+    validations:
+      required: true
+  - type: input
+    id: plan
+    attributes:
+      label: Plan
+      placeholder: Plus, Pro 100, Business
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      placeholder: Web, iOS, Android
+    validations:
+      required: true
+  - type: input
+    id: price
+    attributes:
+      label: Local price and currency
+      placeholder: 20 USD / month
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: Official URL or redacted evidence. Remove private data.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Tax, billing cycle, uncertainty, and verification date.
