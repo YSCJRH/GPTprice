@@ -77,6 +77,9 @@ export function HomePage({ currency, language }: HomePageProps) {
             <h1 className="max-w-4xl text-2xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-3xl lg:text-4xl">
               {t.heroTitle}
             </h1>
+            <p className="max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+              {t.heroSubtitle}
+            </p>
           </div>
         </div>
 
@@ -87,10 +90,29 @@ export function HomePage({ currency, language }: HomePageProps) {
               {lowestValue == null ? '-' : formatMoney(lowestValue, currency)}
             </p>
             {lowestRecord ? (
-              <p className="mt-3 text-sm leading-6 text-slate-300">
-                {localizedRegionName(lowestRecord, language)} · {planLabel(lowestRecord.plan, language)} ·{' '}
-                {platformLabel(lowestRecord.platform, language)}
-              </p>
+              <dl className="mt-4 grid grid-cols-3 gap-2">
+                <div className="min-w-0 rounded-md bg-white/5 px-3 py-2">
+                  <dt className="text-xs text-slate-400">{t.region}</dt>
+                  <dd
+                    className="mt-1 truncate text-sm font-medium text-white"
+                    title={localizedRegionName(lowestRecord, language)}
+                  >
+                    {localizedRegionName(lowestRecord, language)}
+                  </dd>
+                </div>
+                <div className="min-w-0 rounded-md bg-white/5 px-3 py-2">
+                  <dt className="text-xs text-slate-400">{t.plan}</dt>
+                  <dd className="mt-1 truncate text-sm font-medium text-white">
+                    {planLabel(lowestRecord.plan, language)}
+                  </dd>
+                </div>
+                <div className="min-w-0 rounded-md bg-white/5 px-3 py-2">
+                  <dt className="text-xs text-slate-400">{t.platform}</dt>
+                  <dd className="mt-1 truncate text-sm font-medium text-white">
+                    {platformLabel(lowestRecord.platform, language)}
+                  </dd>
+                </div>
+              </dl>
             ) : (
               <p className="mt-3 text-sm text-slate-300">{t.noFixedPrice}</p>
             )}
