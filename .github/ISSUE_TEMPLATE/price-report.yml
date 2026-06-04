@@ -36,6 +36,20 @@ body:
       placeholder: 20 USD / month
     validations:
       required: true
+  - type: dropdown
+    id: source_type
+    attributes:
+      label: Source type
+      description: Choose the strongest source category you can support.
+      options:
+        - Official OpenAI page
+        - Official App Store listing
+        - Official Google Play listing
+        - Redacted checkout evidence
+        - Public third-party index
+        - Other public source
+    validations:
+      required: true
   - type: textarea
     id: source
     attributes:
@@ -43,8 +57,16 @@ body:
       description: Official public URL or redacted evidence. Remove private data and do not link private repositories.
     validations:
       required: true
+  - type: input
+    id: verified_at
+    attributes:
+      label: Verification date
+      description: Date when you checked the source.
+      placeholder: 2026-06-04
+    validations:
+      required: true
   - type: textarea
     id: notes
     attributes:
       label: Notes
-      description: Tax, billing cycle, uncertainty, and verification date.
+      description: Tax, billing cycle, uncertainty, and anything the source does not prove.

@@ -2,12 +2,24 @@
 
 Thanks for helping keep GPTprice accurate and transparent.
 
+GPTprice values evidence quality over volume. A small correction with a reliable public source is more useful than a large batch of unsourced prices.
+
+## Good First Contributions
+
+- Correct a stale price with an official public source.
+- Add a missing tax note or billing-cycle detail.
+- Mark uncertain data as `needs_review` when the source is weak.
+- Improve source notes so readers understand what the source actually proves.
+- Improve documentation that explains data limits, confidence, or contribution rules.
+
 ## Accepted Sources
 
 - OpenAI official pricing, help, or checkout pages.
 - Official App Store or Google Play price surfaces.
 - Redacted checkout or billing evidence with private data removed.
 - Credible third-party indexes, clearly marked as third-party.
+
+Prefer public URLs. If evidence is a screenshot, redact account names, email addresses, order IDs, payment data, private workspace names, and any other private details before sharing it.
 
 ## Do Not Submit
 
@@ -35,6 +47,20 @@ Each price contribution should include:
 When data is uncertain, mark it as `needs_review`. Do not guess.
 
 Third-party index data should stay clearly attributed and should not be upgraded to high confidence unless a maintainer verifies it against an official or redacted checkout source.
+
+## How to Submit
+
+- Use the price report template for new records.
+- Use the data correction template for existing records.
+- Include the source URL, verification date, and what the source proves.
+- Explain ambiguity instead of hiding it. If you are unsure, say so.
+- Keep the contribution focused. One clear correction is easier to review than a mixed batch.
+
+## Review Expectations
+
+Maintainers may change confidence or status during review. This is normal: `confidence` describes evidence quality, not whether the reported price is interesting.
+
+Records that are not sufficiently supported should stay `needs_review` and remain hidden from default rankings.
 
 ## Local Checks
 

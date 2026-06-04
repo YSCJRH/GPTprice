@@ -18,7 +18,7 @@ body:
     id: correction
     attributes:
       label: Correction
-      description: Explain what should change and why.
+      description: Explain what should change, why it is wrong today, and whether confidence/status should change.
     validations:
       required: true
   - type: textarea
@@ -26,5 +26,13 @@ body:
     attributes:
       label: Source
       description: Provide a reliable public source or redacted evidence. Remove private data and do not link private repositories.
+    validations:
+      required: true
+  - type: input
+    id: verified_at
+    attributes:
+      label: Verification date
+      description: Date when you checked the source.
+      placeholder: 2026-06-04
     validations:
       required: true

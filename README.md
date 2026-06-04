@@ -1,33 +1,84 @@
 # GPTprice
 
-GPTprice is an open-source, auditable dashboard for comparing ChatGPT / OpenAI subscription prices across regions, platforms, currencies, sources, freshness, and confidence levels.
+[![CI](https://github.com/YSCJRH/GPTprice/actions/workflows/ci.yml/badge.svg)](https://github.com/YSCJRH/GPTprice/actions/workflows/ci.yml)
+[![Deploy GitHub Pages](https://github.com/YSCJRH/GPTprice/actions/workflows/deploy.yml/badge.svg)](https://github.com/YSCJRH/GPTprice/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
 
-简体中文优先：GPTprice 是一个开源、可审计的 ChatGPT / OpenAI 订阅价格透明化面板，用于预算规划和公共信息研究。
+GPTprice is an open-source, auditable ChatGPT / OpenAI subscription price transparency dashboard.
 
-## What this project is
+简体中文优先：GPTprice 用于比较不同地区、平台、计划和基准货币下的 ChatGPT / OpenAI 订阅价格，帮助用户做预算规划和公开信息研究。
+
+[Live demo](https://yscjrh.github.io/GPTprice/) · [Data trust model](docs/data-trust.md) · [Contribute data](CONTRIBUTING.md)
+
+## Why GPTprice
+
+ChatGPT / OpenAI subscription prices can vary by region, platform, billing cycle, tax treatment, and source freshness. Public price discussions are often scattered, stale, or hard to audit.
+
+GPTprice makes this information easier to inspect:
+
+- Compare subscription prices across regions, plans, platforms, and currencies.
+- See the original local price and indicative converted price side by side.
+- Inspect source type, source URL, confidence, tax note, status, and verification date.
+- Keep unverified data hidden by default.
+- Use a static, open, GitHub Pages-hosted dashboard with no backend or login.
+
+## What You Can Do
+
+- Search by country, region code, currency, plan, or platform.
+- Filter by plan, platform, source, and data visibility.
+- Switch between Simplified Chinese and English.
+- Switch the base currency for indicative conversion.
+- Review desktop tables and mobile cards.
+- Contribute corrections with public sources or redacted evidence.
+
+## Why Star This Project
+
+Star GPTprice if you want:
+
+- A transparent public reference for ChatGPT / OpenAI subscription pricing.
+- A static open-source dataset that can be audited through Git history.
+- A conservative data model that separates official, third-party, and needs-review records.
+- A project that refuses purchase-workaround guidance and keeps privacy boundaries clear.
+- A maintainable Vite + React + TypeScript example for public data dashboards.
+
+## Data Trust Model
+
+GPTprice is useful only if the data is explainable. Every price record should carry source and confidence metadata.
+
+| Layer | Source type | Default treatment |
+| --- | --- | --- |
+| Official public source | OpenAI pricing/help pages, App Store, Google Play, official checkout or documentation | High confidence when the price and region are directly supported |
+| Attributed public index | Public third-party pricing indexes already documented in the repo | Medium confidence unless independently verified |
+| User report or weak evidence | Redacted screenshots, reports, partial public evidence | `needs_review`, hidden by default |
+| Conflict or stale data | Contradictory, expired, or unclear evidence | `conflict`, `stale`, or `needs_review` |
+
+See [docs/data-trust.md](docs/data-trust.md) for contribution rules, confidence semantics, and refresh expectations.
+
+## Freshness
+
+This is not a real-time crawler. Prices, taxes, availability, platform checkout behavior, and exchange rates can change at any time.
+
+The maintenance workflow is:
+
+- Weekly Codex App automation checks public sources and prepares verified updates.
+- A separate review gate checks source quality, privacy, confidence, and compliance boundaries.
+- `npm run validate:data`, `npm run lint`, `npm run typecheck`, and `npm run build` must pass before publish.
+- Final prices are still determined by official checkout pages, App Store, Google Play, or provider documentation.
+
+## Project Boundaries
+
+GPTprice is:
 
 - A static Vite + React + TypeScript site.
-- A static price dataset seeded from a third-party public index and strengthened with official OpenAI Help Center and Apple App Store records.
-- A transparent way to show source, confidence, tax notes, verification dates, and indicative currency conversion.
-- A GitHub Pages-ready project.
+- A public, auditable price transparency dashboard.
+- A budgeting and public-information research tool.
 
-## What this project is not
+GPTprice is not:
 
-- Not a cross-region purchase guide.
-- Not a guide for VPNs, gift cards, fake addresses, region changes, payment workarounds, or bypassing platform rules.
-- Not affiliated with OpenAI, Apple, Google, or any payment provider.
-- Not a real-time scraper, checkout crawler, database, or backend service.
-
-## Features
-
-- Simplified Chinese first, with English UI switch.
-- Search by country, region code, currency, plan, or platform.
-- Plan tabs for Free, Go, Plus, Pro 5x, Pro 20x, Team, Nonprofit Business, and All.
-- Platform filter, source filter, base-currency selector, sort controls, and unverified-data toggle.
-- Desktop table and mobile cards.
-- Source and confidence badges.
-- Manual exchange-rate snapshot with "indicative only" conversion.
-- Region detail, contribution, FAQ, and About pages.
+- A cross-region purchase guide.
+- A guide for VPNs, gift cards, fake addresses, region changes, payment workarounds, or bypassing platform rules.
+- Affiliated with OpenAI, Apple, Google, or any payment provider.
+- A scraper service, checkout crawler, backend, database, or real-time API.
 
 ## Quick Start
 
@@ -45,21 +96,24 @@ npm run validate:data
 npm run build
 ```
 
-## Data
+## Data Files
 
-Price records live in `src/data/price-data.json`. The broad Web seed is derived from the public GPTSub index at `https://gptsub.linusx.dev/` and each imported record is marked as `sourceType: "third_party_index"` with medium confidence. No public GPTSub source repository or explicit data license was found during this import pass, so GPTprice treats it as attributed third-party index data rather than confirmed open-source data.
-
-The official-source layer is imported from the user-provided `price.md` public intelligence table. It adds OpenAI Help Center Web records and Apple App Store regional iOS prices as high-confidence official records where applicable. Android public listing rows are retained as `needs_review` because the unauthenticated Google Play page does not expose regional subscription prices.
-
-Exchange rates live in `src/data/exchange-rates.json`. Exchange-rate conversions are indicative only and must not be treated as final checkout prices. A local price change should update the price record. A currency-rate change should update only the exchange-rate snapshot.
+- `src/data/price-data.json`: subscription price records.
+- `src/data/exchange-rates.json`: static exchange-rate snapshot for indicative conversion.
+- `src/data/regions.json`: region names and default currencies.
 
 Unverified records use `confidence: "needs_review"` and `status: "needs_review"`. They are hidden from the default ranking.
 
-## Disclaimer
+## Contributing
 
-This is an unofficial open-source project. It is not affiliated with OpenAI, Apple, Google, or any payment provider. It is for price transparency and budgeting only. It does not provide or encourage bypassing regional restrictions, payment restrictions, platform rules, or terms of service. Prices, exchange rates, taxes, availability, eligibility, and features may change at any time. Final prices are determined by the official checkout page, App Store, Google Play, or service provider documentation.
+Useful contributions include:
 
-本项目是非官方开源项目，与 OpenAI、Apple、Google 或任何支付机构无隶属关系。项目仅用于价格透明化和预算规划，不提供或鼓励绕过地区限制、支付限制、平台规则或服务条款的行为。价格、汇率、税费、可用性、资格和功能可能随时变化，最终价格以官方结账页、App Store、Google Play 或服务方文档为准。
+- Correcting a price with an official public source.
+- Reporting stale or conflicting records.
+- Improving region names, tax notes, source metadata, or confidence labels.
+- Improving documentation that helps users understand data limits.
+
+Start with [CONTRIBUTING.md](CONTRIBUTING.md). Do not submit private account data, order IDs, payment screenshots, cookies, tokens, private repository links, local paths, or payment-workaround guidance.
 
 ## License
 

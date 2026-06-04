@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Live demo
+    url: https://yscjrh.github.io/GPTprice/
+    about: View the current public dashboard before reporting an issue.
+  - name: Contribution guide
+    url: https://github.com/YSCJRH/GPTprice/blob/main/CONTRIBUTING.md
+    about: Read source, privacy, and data quality rules before contributing.
+  - name: Data trust model
+    url: https://github.com/YSCJRH/GPTprice/blob/main/docs/data-trust.md
+    about: Understand confidence levels, source priority, and review expectations.
