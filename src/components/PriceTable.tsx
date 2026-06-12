@@ -36,16 +36,18 @@ export function PriceTable({ currency, language, rates, records }: PriceTablePro
   return (
     <>
       <div className="hidden overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm lg:block">
-        <div className="overflow-x-auto">
+        <div className="max-h-[72vh] overflow-auto">
           <table className="min-w-full divide-y divide-slate-200 text-sm">
-            <thead className="bg-slate-50/80">
+            <thead className="sticky top-0 z-10 bg-slate-50 shadow-[0_1px_0_rgba(148,163,184,0.35)]">
               <tr className="text-left text-xs font-semibold uppercase text-slate-500">
-                <th className="px-4 py-3.5">#</th>
+                <th className="w-14 px-4 py-3.5">#</th>
                 <th className="px-4 py-3.5">{t.region}</th>
                 <th className="px-4 py-3.5">{t.plan}</th>
                 <th className="px-4 py-3.5">{t.platform}</th>
-                <th className="px-4 py-3.5">{t.localPrice}</th>
-                <th className="px-4 py-3.5">{currency}</th>
+                <th className="px-4 py-3.5 text-right">{t.localPrice}</th>
+                <th className="px-4 py-3.5 text-right">
+                  {t.converted} ({currency})
+                </th>
                 <th className="px-4 py-3.5">{t.tax}</th>
                 <th className="px-4 py-3.5">{t.source}</th>
                 <th className="px-4 py-3.5">{t.confidence}</th>
@@ -57,30 +59,33 @@ export function PriceTable({ currency, language, rates, records }: PriceTablePro
                 const converted = convertedPriceForRecord(record, currency, rates)
 
                 return (
-                  <tr key={record.id} className="align-top text-slate-700 transition hover:bg-slate-50/80">
-                    <td className="px-4 py-4 text-slate-400">{index + 1}</td>
-                    <td className="px-4 py-4">
+                  <tr
+                    key={record.id}
+                    className="align-top text-slate-700 transition odd:bg-white even:bg-slate-50/35 hover:bg-cyan-50/60"
+                  >
+                    <td className="px-4 py-4 text-sm tabular-nums text-slate-400">{index + 1}</td>
+                    <td className="max-w-48 px-4 py-4">
                       <Link
-                        className="font-semibold text-slate-950 hover:text-slate-700"
+                        className="font-semibold text-slate-950 hover:text-cyan-700"
                         to={`/region/${record.regionCode}`}
                       >
                         {localizedRegionName(record, language)}
                       </Link>
                       <div className="mt-1 text-xs text-slate-500">{record.regionCode}</div>
                     </td>
-                    <td className="px-4 py-4 font-medium text-slate-800">{planLabel(record.plan, language)}</td>
+                    <td className="px-4 py-4 font-medium whitespace-nowrap text-slate-800">{planLabel(record.plan, language)}</td>
                     <td className="px-4 py-4 text-slate-600">{platformLabel(record.platform, language)}</td>
-                    <td className="px-4 py-4">
-                      <div className="font-semibold text-slate-950">
+                    <td className="px-4 py-4 text-right">
+                      <div className="font-semibold tabular-nums text-slate-950">
                         {record.localPriceDisplay ?? formatMoney(record.localPrice, record.currency)}
                       </div>
                       <div className="mt-1 text-xs text-slate-500">
                         {billingCycleLabel(record.billingCycle, language)}
                       </div>
                     </td>
-                    <td className="px-4 py-4">
-                      <div className="font-bold text-slate-950">
-                        {converted == null ? 'Unavailable' : formatMoney(converted, currency)}
+                    <td className="px-4 py-4 text-right">
+                      <div className="font-bold tabular-nums text-emerald-700">
+                        {converted == null ? t.unavailablePrice : formatMoney(converted, currency)}
                       </div>
                       {converted != null && <div className="mt-1 text-xs text-slate-500">{t.indicative}</div>}
                     </td>

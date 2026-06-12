@@ -35,7 +35,7 @@ export function Filters({
       className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm sm:p-5"
       aria-label="Filters"
     >
-      <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+      <div className="mb-4 flex flex-col gap-1 border-b border-slate-100 pb-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h2 className="text-base font-semibold text-slate-950">{t.controlsTitle}</h2>
           <p className="mt-1 text-sm text-slate-500">{t.controlsSubtitle}</p>
@@ -49,10 +49,10 @@ export function Filters({
           </label>
           <input
             id="region-search"
-            className="h-11 rounded-md border border-slate-200 bg-slate-50 px-3 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:bg-white focus:ring-4 focus:ring-slate-200/70"
+            className="h-11 rounded-md border border-slate-200 bg-slate-50 px-3 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-100"
             value={search}
             onChange={(event) => onSearchChange(event.target.value)}
-            placeholder="US, Taiwan, USD"
+            placeholder={t.searchPlaceholder}
           />
         </div>
 
@@ -62,7 +62,7 @@ export function Filters({
           </label>
           <select
             id="platform-filter"
-            className="h-11 rounded-md border border-slate-200 bg-slate-50 px-3 text-sm text-slate-950 outline-none transition focus:border-slate-400 focus:bg-white focus:ring-4 focus:ring-slate-200/70"
+            className="h-11 rounded-md border border-slate-200 bg-slate-50 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-100"
             value={platform}
             onChange={(event) => onPlatformChange(event.target.value as PlatformFilter)}
           >
@@ -79,7 +79,7 @@ export function Filters({
           </label>
           <select
             id="source-filter"
-            className="h-11 rounded-md border border-slate-200 bg-slate-50 px-3 text-sm text-slate-950 outline-none transition focus:border-slate-400 focus:bg-white focus:ring-4 focus:ring-slate-200/70"
+            className="h-11 rounded-md border border-slate-200 bg-slate-50 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-100"
             value={source}
             onChange={(event) => onSourceChange(event.target.value as SourceFilter)}
           >
@@ -96,7 +96,7 @@ export function Filters({
           </label>
           <select
             id="sort-filter"
-            className="h-11 rounded-md border border-slate-200 bg-slate-50 px-3 text-sm text-slate-950 outline-none transition focus:border-slate-400 focus:bg-white focus:ring-4 focus:ring-slate-200/70"
+            className="h-11 rounded-md border border-slate-200 bg-slate-50 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-100"
             value={sortKey}
             onChange={(event) => onSortKeyChange(event.target.value as SortKey)}
           >
@@ -109,9 +109,9 @@ export function Filters({
 
         <div className="grid gap-2 sm:col-span-2 lg:col-span-1">
           <span className="text-sm font-semibold text-slate-600">{t.dataScope}</span>
-          <label className="flex h-11 items-center gap-3 rounded-md border border-slate-200 bg-slate-50 px-3 text-sm text-slate-600 transition hover:bg-white">
+          <label className="flex h-11 items-center gap-3 rounded-md border border-slate-200 bg-slate-50 px-3 text-sm text-slate-600 transition hover:border-amber-200 hover:bg-amber-50/60">
             <input
-              className="h-4 w-4 rounded border-slate-300 text-slate-950"
+              className="h-4 w-4 rounded border-slate-300 text-slate-950 accent-slate-950"
               type="checkbox"
               checked={showUnverified}
               onChange={(event) => onShowUnverifiedChange(event.target.checked)}

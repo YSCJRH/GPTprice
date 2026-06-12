@@ -9,6 +9,7 @@ interface PlanTabsProps {
 }
 
 const plans: PlanFilter[] = [
+  'all',
   'free',
   'go',
   'plus',
@@ -16,7 +17,6 @@ const plans: PlanFilter[] = [
   'pro_200',
   'business_standard',
   'business_non_profit',
-  'all',
 ]
 
 export function PlanTabs({ language, selectedPlan, onPlanChange }: PlanTabsProps) {
@@ -24,7 +24,7 @@ export function PlanTabs({ language, selectedPlan, onPlanChange }: PlanTabsProps
 
   return (
     <nav
-      className="flex gap-1 overflow-x-auto rounded-lg border border-slate-200 bg-white p-1 shadow-sm"
+      className="flex gap-1 overflow-x-auto rounded-lg border border-slate-200 bg-white p-1 shadow-sm [scrollbar-width:thin]"
       aria-label="Plan filter"
     >
       {plans.map((plan) => {
@@ -35,7 +35,8 @@ export function PlanTabs({ language, selectedPlan, onPlanChange }: PlanTabsProps
           <button
             key={plan}
             type="button"
-            className={`h-10 shrink-0 rounded-md px-4 text-sm font-semibold transition ${
+            aria-pressed={active}
+            className={`h-10 shrink-0 snap-start rounded-md px-4 text-sm font-semibold whitespace-nowrap transition ${
               active
                 ? 'bg-slate-950 text-white shadow-sm'
                 : 'text-slate-600 hover:bg-slate-100 hover:text-slate-950'

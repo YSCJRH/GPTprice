@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.1.0",
-  "updatedAt": "2026-06-11T00:00:00Z",
+  "updatedAt": "2026-06-12T00:00:00Z",
   "source": {
     "name": "GPTSub",
     "url": "https://gptsub.linusx.dev",
@@ -32516,14 +32516,13 @@
       "taxNote": "Apple App Store public listing; tax treatment may depend on region, account, and platform rules.",
       "sourceType": "app_store_listing",
       "sourceUrl": "https://apps.apple.com/tr/app/chatgpt/id6448311069",
-      "sourceNote": "Official Apple App Store regional listing imported from price.md. 官方 App Store 土耳其页；与旧用户报告 / 旧深研值冲突，应以当前官方页为准。",
-      "verifiedAt": "2026-06-03T00:00:00Z",
-      "staleAt": "2026-07-03T00:00:00Z",
+      "sourceNote": "Official Apple App Store Turkey listing refreshed from the public In-App Purchases section on 2026-06-12. 官方 App Store 土耳其页；最终价格以官方页面为准。",
+      "verifiedAt": "2026-06-12T00:00:00Z",
+      "staleAt": "2026-07-12T00:00:00Z",
       "confidence": "high",
       "contributor": "price.md App Store table",
       "notes": [
-        "官方 App Store 土耳其页；与旧用户报告 / 旧深研值冲突，应以当前官方页为准。",
-        "Duplicate high-price App Store item was recorded as ₺8,999.99 and excluded from default subscription records."
+        "官方 App Store 土耳其页公开 In-App Purchases 列出 ChatGPT Go ₺249.99。"
       ],
       "status": "active"
     },
@@ -39955,21 +39954,21 @@
       "currency": "TRY",
       "plan": "plus",
       "platform": "ios",
-      "localPrice": 499.99,
-      "localPriceDisplay": "₺499.99",
+      "localPrice": 999.99,
+      "localPriceDisplay": "₺999.99",
       "billingCycle": "monthly",
       "taxIncluded": "unknown",
       "taxNote": "Apple App Store public listing; tax treatment may depend on region, account, and platform rules.",
       "sourceType": "app_store_listing",
       "sourceUrl": "https://apps.apple.com/tr/app/chatgpt/id6448311069",
-      "sourceNote": "Official Apple App Store regional listing imported from price.md. 官方 App Store 土耳其页；与旧用户报告 / 旧深研值冲突，应以当前官方页为准。",
-      "verifiedAt": "2026-06-03T00:00:00Z",
-      "staleAt": "2026-07-03T00:00:00Z",
+      "sourceNote": "Official Apple App Store Turkey listing refreshed from the public In-App Purchases section on 2026-06-12. 官方 App Store 土耳其页；最终价格以官方页面为准。",
+      "verifiedAt": "2026-06-12T00:00:00Z",
+      "staleAt": "2026-07-12T00:00:00Z",
       "confidence": "high",
       "contributor": "price.md App Store table",
       "notes": [
-        "官方 App Store 土耳其页；与旧用户报告 / 旧深研值冲突，应以当前官方页为准。",
-        "Duplicate high-price App Store item was recorded as ₺8,999.99 and excluded from default subscription records."
+        "官方 App Store 土耳其页公开 In-App Purchases 列出 ChatGPT Plus ₺999.99。",
+        "同页另有 ChatGPT Plus ₺9,999.99 高价项；GPTprice 不把它作为默认 Plus 月订阅行。"
       ],
       "status": "active"
     },
@@ -47386,14 +47385,13 @@
       "taxNote": "Apple App Store public listing; tax treatment may depend on region, account, and platform rules.",
       "sourceType": "app_store_listing",
       "sourceUrl": "https://apps.apple.com/tr/app/chatgpt/id6448311069",
-      "sourceNote": "Official Apple App Store regional listing imported from price.md. 官方 App Store 土耳其页；与旧用户报告 / 旧深研值冲突，应以当前官方页为准。",
-      "verifiedAt": "2026-06-03T00:00:00Z",
-      "staleAt": "2026-07-03T00:00:00Z",
+      "sourceNote": "Official Apple App Store Turkey listing refreshed from the public In-App Purchases section on 2026-06-12. 官方 App Store 土耳其页；最终价格以官方页面为准。",
+      "verifiedAt": "2026-06-12T00:00:00Z",
+      "staleAt": "2026-07-12T00:00:00Z",
       "confidence": "high",
       "contributor": "price.md App Store table",
       "notes": [
-        "官方 App Store 土耳其页；与旧用户报告 / 旧深研值冲突，应以当前官方页为准。",
-        "Duplicate high-price App Store item was recorded as ₺8,999.99 and excluded from default subscription records."
+        "官方 App Store 土耳其页公开 In-App Purchases 列出 ChatGPT Pro 5x ₺5,299.99。"
       ],
       "status": "active"
     },
@@ -54803,21 +54801,20 @@
       "currency": "TRY",
       "plan": "pro_200",
       "platform": "ios",
-      "localPrice": 7999.99,
-      "localPriceDisplay": "₺7,999.99",
+      "localPrice": 9999.99,
+      "localPriceDisplay": "₺9,999.99",
       "billingCycle": "monthly",
       "taxIncluded": "unknown",
       "taxNote": "Apple App Store public listing; tax treatment may depend on region, account, and platform rules.",
       "sourceType": "app_store_listing",
       "sourceUrl": "https://apps.apple.com/tr/app/chatgpt/id6448311069",
-      "sourceNote": "Official Apple App Store regional listing imported from price.md. 官方 App Store 土耳其页；与旧用户报告 / 旧深研值冲突，应以当前官方页为准。",
-      "verifiedAt": "2026-06-03T00:00:00Z",
-      "staleAt": "2026-07-03T00:00:00Z",
+      "sourceNote": "Official Apple App Store Turkey listing refreshed from the public In-App Purchases section on 2026-06-12. 官方 App Store 土耳其页；最终价格以官方页面为准。",
+      "verifiedAt": "2026-06-12T00:00:00Z",
+      "staleAt": "2026-07-12T00:00:00Z",
       "confidence": "high",
       "contributor": "price.md App Store table",
       "notes": [
-        "官方 App Store 土耳其页；与旧用户报告 / 旧深研值冲突，应以当前官方页为准。",
-        "Duplicate high-price App Store item was recorded as ₺8,999.99 and excluded from default subscription records."
+        "官方 App Store 土耳其页公开 In-App Purchases 列出 ChatGPT Pro 20x ₺9,999.99。"
       ],
       "status": "active"
     },
