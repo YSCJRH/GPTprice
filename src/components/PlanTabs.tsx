@@ -16,6 +16,7 @@ const plans: PlanFilter[] = [
   'pro_100',
   'pro_200',
   'business_standard',
+  'business_premium',
   'business_non_profit',
 ]
 
